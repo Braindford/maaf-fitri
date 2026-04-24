@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>untuk fitriii 💖</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffe6eb 0%, #ffc0cb 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #ff3377;
+            font-size: 3em;
+            margin-bottom: 10px;
+            z-index: 10;
+            text-shadow: 2px 2px 4px rgba(255, 51, 119, 0.2);
+            padding: 0 15px;
+        }
+
+        p {
+            color: #d6336c;
+            font-size: 1.2em;
+            max-width: 600px;
+            padding: 0 25px;
+            z-index: 10;
+            line-height: 1.6;
+        }
+
+        .main-heart {
+            color: #ff1a66;
+            font-size: 120px;
+            margin: 15px 0;
+            animation: pulse 1s infinite alternate;
+            z-index: 10;
+            filter: drop-shadow(0px 10px 10px rgba(255, 26, 102, 0.3));
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        .btn {
+            background-color: #ff3377;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(255, 51, 119, 0.4);
+            transition: all 0.3s ease;
+            z-index: 10;
+            margin-top: 20px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn:hover, .btn:active {
+            background-color: #e6005c;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 51, 119, 0.6);
+        }
+
+        #message {
+            display: none;
+            color: #e6005c;
+            font-weight: bold;
+            font-size: 1.8em;
+            margin-top: 20px;
+            padding: 0 20px;
+            z-index: 10;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -100px;
+            color: rgba(255, 128, 170, 0.6);
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(0) rotate(0deg) scale(1); 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(-110vh) rotate(360deg) scale(1.5); 
+                opacity: 0; 
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            p {
+                font-size: 1.05em;
+                padding: 0 20px;
+            }
+            .main-heart {
+                font-size: 90px;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 1.1em;
+            }
+            #message {
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            h1 { font-size: 1.8em; }
+            p { font-size: 0.95em; }
+            .main-heart { font-size: 70px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>fitriii maafinn akuuu 🥺</h1>
+    <p>aku tauuu aku salah dan bikin kamuu kesal, tapii aku tidaaa berniat begituu.</p>
+    
+    <div class="main-heart">💖</div>
+    
+    <p>Jangan marah lagi yaa sayang? Senyum dong, nanti cantiknya hilang tauuu kalau cemberut terus.</p>
+    
+    <button class="btn" onclick="forgiveMe()">Iyaa, akuu maafin kamu ranggaaa</button>
+    <div id="message">Yeaaaayy! Makasih sayaanggg, love youuu! 🥰💖</div>
+
+    <script>
+        function createFloatingHearts() {
+            const container = document.body;
+            const heartTypes = ['💖', '💗', '💓', '💕'];
+            
+            const isMobile = window.innerWidth <= 600;
+            const heartCount = isMobile ? 25 : 40; 
+            
+            for (let i = 0; i < heartCount; i++) {
+                let heart = document.createElement('div');
+                heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+                heart.classList.add('floating-heart');
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                
+                container.appendChild(heart);
+            }
+        }
+        createFloatingHearts();
+
+        function forgiveMe() {
+            document.getElementById('message').style.display = 'block';
+            document.querySelector('.btn').style.display = 'none';
+            document.querySelector('h1').innerText = "Yeaayy baikan 🥰";
+            
+            const isMobile = window.innerWidth <= 600;
+            const burstCount = isMobile ? 20 : 30;
+
+            for(let i = 0; i < burstCount; i++){
+                let heart = document.createElement('div');
+                heart.innerHTML = '💘';
+                heart.classList.add('floating-heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                heart.style.fontSize = (Math.random() * 40 + 20) + 'px';
+                heart.style.color = "rgba(255, 51, 119, 0.8)";
+                document.body.appendChild(heart);
+            }
+        }
+    </script>
+
+</body>
+</html>
